@@ -1,9 +1,20 @@
+/*
+ * for compute the money you have 
+ * 4 types of bank notes(1000,500,100,20)
+ * output you total money is ...
+ * 
+ * Author: Nutsaba Chaiyadet
+* ID: 653040134-6
+* Sec: 1
+* Date: December 9, 2022
+ */
+
 package chaiyadet.nutsaba.lab2;
 
 public class MoneyProcessor {
     public static void main(String[] args) {
         if (args.length == 4) {
-            int n1000 = Integer.parseInt(args[0]);
+            int n1000 = Integer.parseInt(args[0]); 
             int n500 = Integer.parseInt(args[1]);
             int n100 = Integer.parseInt(args[2]);
             int n20 = Integer.parseInt(args[3]);

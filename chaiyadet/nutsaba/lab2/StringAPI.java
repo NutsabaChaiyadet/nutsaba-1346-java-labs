@@ -1,3 +1,11 @@
+/*program check university or college or neither a university nor a college
+ *
+ *  Author: Nutsaba Chaiyadet
+* ID: 653040134-6
+* Sec: 1
+* Date: December 9, 2022
+*/
+
 package chaiyadet.nutsaba.lab2;
 
 public class StringAPI {

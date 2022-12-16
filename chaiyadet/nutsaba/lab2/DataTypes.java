@@ -1,3 +1,10 @@
+/* 
+ * This program is output my name and my ID
+ * Author: Nutsaba Chaiyadet
+* ID: 653040134-6
+* Sec: 1
+* Date: December 16, 2022
+*/
 package chaiyadet.nutsaba.lab2;
 
 public class DataTypes {
@@ -6,8 +13,8 @@ public class DataTypes {
         String student_ID = " 6530401346";
         char c1 = name.charAt(0);
         boolean n = true;
-        int base8 = 056;
-        int base16 = 0x2E;
+        int base8 = 056; // เลขฐาน8
+        int base16 = 0x2E; //เลขฐาน16
         long num = 46L;
         float num1 = 46.65F;
         double num2 = 46.22;
