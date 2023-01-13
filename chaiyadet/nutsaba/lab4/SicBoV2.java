@@ -1,3 +1,13 @@
+/*
+ * This program is a Hi-Lo game with 2 options: high or low and choose numbers 1-6.
+ *   If finished playing  will go up, enter an a to continue playing  or put another one to stop
+ * 
+ * Author: Nutsaba Chaiyadet
+* ID: 653040134-6
+* Sec: 1
+* Date: january 13, 2023
+ */
+
 package chaiyadet.nutsaba.lab4;
 
 import java.util.Scanner;
@@ -51,13 +61,13 @@ public class SicBoV2 {
             int y = sn.nextInt();
             if (y >= 1 && y <= 6){
                 System.out.println("Dice 1 : " + dice1 + ", " + "Dice 2 : " +  dice2 + ", " + " Dice 3 : " + dice3);
-                if ((dice1 == y) && (dice2 == y) && (dice3 == y)){
+                if ((dice1 == y) && (dice2 == y) && (dice3 == y)){ //If random numbers get all 3 numbers that we have chosen
                     System.out.println("You win " + " " + 10*3*(6%5+1) + " " + "Baht.");             
                 }
                 else if (((dice1 == y) && (dice2 == y)) || ((dice1 == y) && (dice3 == y)) || ((dice2 == y) && (dice3 == y))) {
-                    System.out.println("You win " + " " + 10*2*(6%5+1) + " " + "Baht.");
+                    System.out.println("You win " + " " + 10*2*(6%5+1) + " " + "Baht."); //If random numbers get 2 numbers that we have chosen
                 }
-                else if ((dice1 == y) || (dice2 == y) || (dice3 == y)){
+                else if ((dice1 == y) || (dice2 == y) || (dice3 == y)){//If random numbers get the numbers that we choose 1 child   
                     System.out.println("You win " + " " + 10*1*(6%5+1) + " " + "Baht.");              
                 }            
                 else if ((dice1 != y) && (dice2 != y) && (dice3 != y)) {
@@ -90,8 +100,3 @@ public class SicBoV2 {
             sn.close();
     }
 }
-
-
-
-
-       
