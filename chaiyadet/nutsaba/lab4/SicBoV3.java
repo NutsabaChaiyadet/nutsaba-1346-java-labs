@@ -4,15 +4,17 @@
  *  enter a new option whether to choose option 1 or 2, then select again.  And if receiving the wrong value, 
  * it will receive new values ​​continuously
  * 
- * Author: Nutsaba Chaiyadet
+ * @author Nutsaba Chaiyadet
 * ID: 653040134-6
 * Sec: 1
-* Date: january 13, 2023
+* @version january 13, 2023
  */
 package chaiyadet.nutsaba.lab4;
 
 import java.util.Scanner;
-
+/**
+ * Generating Random Hi-Lo Games
+ */
 public class SicBoV3 {
     static int choice;
     static Scanner sn = new Scanner(System.in);
@@ -39,14 +41,16 @@ public class SicBoV3 {
             sn.close();
     }
     /**
-     * 
+     * Get value is an option to choose which game to play, type1 choose high or low, 
+     * type2 choose the number the dice will roll.  If you choose 1 or 2, 
+     * you can continue playing the game.  If not, will loop back to get new values.
      */
     public static void getChoice() {
         System.out.println("Choose how do you want to bet:");
         System.out.println("Type 1 for choosing high or low numbers.");
         System.out.println("Type 2 for choosing number between 1-6.");
         System.out.print("Enter yourchoice:");   
-        while (true){
+        while (true){ //loop get value
             String type = sn.next();
             if (type.equals("1") || type.equals("2")){
                 t1 = Integer.parseInt(type);
@@ -58,6 +62,10 @@ public class SicBoV3 {
             break;    
         } 
     }
+    /**
+     * The playgame is if 1 is selected and then h or l is selected, the game is played.  
+     * If you type another character, it will return to accept the new value.
+     */
     public static void playGame(){
         int dice1 = 1 + (int)(Math.random() * ((6-1) + 1));
         int dice2 = 1 + (int)(Math.random() * ((6-1) + 1));

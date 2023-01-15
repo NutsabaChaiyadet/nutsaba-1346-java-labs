@@ -6,24 +6,31 @@
  * it will come up to summarize the list that we can play.
  * 
  * * 
- * Author: Nutsaba Chaiyadet
+ * @author Nutsaba Chaiyadet
 * ID: 653040134-6
 * Sec: 1
-* Date: january 13, 2023
+* @version january 13, 2023
  */
 package chaiyadet.nutsaba.lab4;
 
 import java.util.Scanner;
-
+/**
+ *  a random Sic Bo game and summarizing the playlist.
+ */
 public class SicBoV4 {
     static int choice;
     static Scanner sn = new Scanner(System.in);
     static int t1;
-    final static int MAX_INPUT = 100;
+    final static int MAX_INPUT = 100; // Play up to 100 times
     static String[] gamePlay = new String[ MAX_INPUT];
     static String[] gameResult = new String[ MAX_INPUT];
     static int currentInput = 0;
     static int i = 0;
+
+    /**
+     * Get the value of whether to continue playing or not. 
+     *  If you don't press anything, it's goodbye. If playing, press a.
+     */
     public static void main(String[] args) {
         getChoice();
         playGame();
@@ -50,6 +57,11 @@ public class SicBoV4 {
             System.out.println("Good Bye!");
             sn.close();
     }
+    /**
+     * Get value is an option to choose which game to play, type1 choose high or low, 
+     * type2 choose the number the dice will roll.  If you choose 1 or 2, 
+     * you can continue playing the game.  If not, will loop back to get new values.
+     */
     public static void getChoice() {
         System.out.println("Choose how do you want to bet:");
         System.out.println("Type 1 for choosing high or low numbers.");
@@ -67,6 +79,10 @@ public class SicBoV4 {
             break;    
         } 
     }
+    /**
+     * The playgame is if 1 is selected and then h or l is selected, the game is played.  
+     * If you type another character, it will return to accept the new value.
+     */
     public static void playGame(){
         int dice1 = 1 + (int)(Math.random() * ((6-1) + 1));
         int dice2 = 1 + (int)(Math.random() * ((6-1) + 1));
@@ -81,11 +97,11 @@ public class SicBoV4 {
                 System.out.println("Total is " + total);
                 if (total >= 11 && total <= 18){
                     System.out.println("You win 20 Bath.");
-                    gameResult[currentInput] = "You win 20 Bath.";
+                    gameResult[currentInput] = "You win 20 Bath."; //Summarize the results of playing and display it when playing is stopped.
                 }
                 else if (total >= 3 && total <= 10){
                     System.out.println("You loose 10 Bath.");
-                    gameResult[currentInput] = "You loose 10 Bath.";
+                    gameResult[currentInput] = "You loose 10 Bath."; //Summarize the results of playing and display it when playing is stopped.
                 } 
             }
             else if (t.equalsIgnoreCase("l")) {
@@ -94,11 +110,11 @@ public class SicBoV4 {
                 System.out.println("Total is " + total);
                 if (total >= 11 && total <= 18){
                     System.out.println("You loose 10 Bath.");
-                    gameResult[currentInput] = "You loose 10 Bath.";
+                    gameResult[currentInput] = "You loose 10 Bath."; //Summarize the results of playing and display it when playing is stopped.
                 }
                 else if (total >= 3 && total <= 10){
                     System.out.println("You win 20 Bath.");
-                    gameResult[currentInput] = "You win 20 Bath.";
+                    gameResult[currentInput] = "You win 20 Bath."; //Summarize the results of playing and display it when playing is stopped.
                 } 
             }
             else {
@@ -117,19 +133,20 @@ public class SicBoV4 {
                     System.out.println("Dice 1 : " + dice1 + ", " + "Dice 2 : " +  dice2 + ", " + " Dice 3 : " + dice3);
                     if ((dice1 == y) && (dice2 == y) && (dice3 == y)){
                         System.out.println("You win " + " " + 10*3*(6%5+1) + " " + "Baht.");  
-                        gameResult[currentInput] = "You win " + " " + 10*3*(6%5+1) + " " + "Baht.";           
+                        gameResult[currentInput] = "You win " + " " + 10*3*(6%5+1) + " " + "Baht."; //Summarize the results of playing and display it when playing is stopped.      
                     }
                     else if (((dice1 == y) && (dice2 == y)) || ((dice1 == y) && (dice3 == y)) || ((dice2 == y) && (dice3 == y))) {
                         System.out.println("You win " + " " + 10*2*(6%5+1) + " " + "Baht.");
-                        gameResult[currentInput] = "You win " + " " + 10*2*(6%5+1) + " " + "Baht.";
+                        gameResult[currentInput] = "You win " + " " + 10*2*(6%5+1) + " " + "Baht."; //Summarize the results of playing and display it when playing is stopped.
 
                     }
                     else if ((dice1 == y) || (dice2 == y) || (dice3 == y)){
                         System.out.println("You win " + " " + 10*1*(6%5+1) + " " + "Baht.");    
-                        gameResult[currentInput] = "You win " + " " + 10*1*(6%5+1) + " " + "Baht.";          
+                        gameResult[currentInput] = "You win " + " " + 10*1*(6%5+1) + " " + "Baht.";    //Summarize the results of playing and display it when playing is stopped.      
                     }            
                     else if ((dice1 != y) && (dice2 != y) && (dice3 != y)) {
-                        System.out.println("You loose 10 Baht");
+                        System.out.println("You loose 10 Baht"); //Summarize the results of playing and display it when playing is stopped.
+                        gameResult[currentInput] = "You loose 10 Baht";
                     }   
                     gamePlay[currentInput] = z;
                     currentInput++ ;          

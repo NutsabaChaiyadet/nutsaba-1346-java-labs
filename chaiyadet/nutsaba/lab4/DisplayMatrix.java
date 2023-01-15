@@ -1,10 +1,26 @@
+/**
+ * This program is to create metrics.  Select a size and it will display in metric format. 
+ *  and displays numbers in rows, columns, rows from back to front  Sort from column back to front  
+ * oblique from left to right  Oblique from right to left and zigzag.
+ * 
+ * Author: Nutsaba Chaiyadet
+* ID: 653040134-6
+* Sec: 1
+* Date: january 13, 2023
+ */
 package chaiyadet.nutsaba.lab4;
 
 import java.util.Scanner;
-
+/**
+ * Matrix Creation  and display each matrix
+ */
 public class DisplayMatrix {
     static int[][] matrix;
     static int rowDim, colDim;
+
+    /**
+     * invoke method
+     */
     public static void main(String[] args) {
         inputMatrix();
         showMatrix();
