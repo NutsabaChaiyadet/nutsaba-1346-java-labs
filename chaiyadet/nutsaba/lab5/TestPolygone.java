@@ -1,7 +1,18 @@
+/**
+ * This program is to display the height width to find the area of ​​rectangles and triangles.
+ * 
+ @author Nutsaba Chaiyadet
+* ID: 653040134-6
+* Sec: 1
+* @version january 13, 2023
+ */
+ 
 package chaiyadet.nutsaba.lab5;
 
 enum PolygonType {RECTANGLE,TRIANGLE}
-
+/**
+ * Define width, height, type, and area.
+ */
 class Polygon {
     float width;
     float height;
@@ -24,7 +35,9 @@ class Polygon {
         sumPolygonsArea += newPolygonsArea;
    }
 }
-
+/**
+ * Getting Value and Displaying
+ */
 public class TestPolygone {
     public static void main(String[] args) {
     Polygon polygon1 = new Polygon();
