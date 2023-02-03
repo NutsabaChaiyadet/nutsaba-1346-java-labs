@@ -1,5 +1,12 @@
+/**
+ * This program is to write output.  to print like this we want
+ * 
+ * @author Nutsaba Chaiyadet
+* ID: 653040134-6
+* Sec: 1
+* @version Febuary,3 2023
+ */
 package chaiyadet.nutsaba.lab6;
-
 
 import java.util.ArrayList;
 import chaiyadet.nutsaba.lab5.Athlete;

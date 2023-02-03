@@ -99,6 +99,6 @@ public class Athlete {
     }
     
 public String toString(){
-    return "Athlete " + "[" + name + "," + weight + "kg" + ", " + height + "m" + ", " + gender + ", " + nationality + ", " + birthdate + "]";
+    return "Athlete " + "[" + name + ", " + weight + "kg" + ", " + height + "m" + ", " + gender + ", " + nationality + ", " + birthdate + "]";
 }
 }
