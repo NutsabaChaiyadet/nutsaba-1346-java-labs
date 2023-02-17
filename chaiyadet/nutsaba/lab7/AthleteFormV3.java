@@ -12,7 +12,7 @@ import javax.swing.*;
 
 public class AthleteFormV3 extends AthleteFormV2 {
     protected JMenuBar menuBar;
-    protected JMenu fileMenu,configJMenu,colorJMenu,sizeMenu;
+    protected JMenu fileMenu,configJMenu,colorMenu,sizeMenu;
     protected JMenuItem newMI,openMI,saveMI,exitMI,redMI,greenMI,blueMI,size16MI,size20MI,size24MI;
 
     public AthleteFormV3(String title) { 
@@ -39,7 +39,7 @@ public class AthleteFormV3 extends AthleteFormV2 {
         exitMI = new JMenuItem("Exit");
 
         //menu of configmenu
-        colorJMenu = new JMenu("Color");
+        colorMenu = new JMenu("Color");
         sizeMenu = new JMenu("Size");
         //Color menu item menu
         redMI = new JMenuItem("Red");
@@ -56,12 +56,12 @@ public class AthleteFormV3 extends AthleteFormV2 {
         fileMenu.add(saveMI);
         fileMenu.add(exitMI);
 
-        configJMenu.add(colorJMenu);
+        configJMenu.add(colorMenu);
         configJMenu.add(sizeMenu);
 
-        colorJMenu.add(redMI);
-        colorJMenu.add(greenMI);
-        colorJMenu.add(blueMI);
+        colorMenu.add(redMI);
+        colorMenu.add(greenMI);
+        colorMenu.add(blueMI);
 
         sizeMenu.add(size16MI);
         sizeMenu.add(size20MI);
