@@ -19,7 +19,7 @@ import chaiyadet.nutsaba.lab8.AthleteFormV6;
 public class AthleteFormV8 extends AthleteFormV6 implements ActionListener {
     String resultText;
     String hobbiesText = " ";
-    String clickGender;
+    protected String clickGender;
 
     public AthleteFormV8(String title) {
         super(title);
