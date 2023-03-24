@@ -26,7 +26,7 @@ public class AthleteFormV11 extends AthleteFormV10{
     protected String name;
     protected double weight;
     protected double height; 
-    Gender gender;
+    protected Gender gender;
     protected String nationality;
     protected String birthdate;
 

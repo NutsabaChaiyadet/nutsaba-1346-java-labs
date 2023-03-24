@@ -10,18 +10,20 @@
 package chaiyadet.nutsaba.lab5;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
  * Configuration name, weight, height, nationality, date of birth of athletes. 
  */
-public class Athlete {
+public class Athlete implements Serializable{
     protected String name;
     protected double weight;
     protected double height;
     protected String nationality;
-    protected LocalDate birthdate;
+    protected String birthdate;
     public Gender gender;
+    protected LocalDate birth;
     public enum Gender{MALE ,FEMALE};
 
 
@@ -53,12 +55,12 @@ public class Athlete {
         this.nationality = nationality;
     }
 
-    public LocalDate getBirthdate() {
+    public String getBirthdate() {
         return this.birthdate;
     }
 
     public void setBirthdate(String birthdate) {
-        this.birthdate = LocalDate.parse(birthdate, formatter);
+        this.birthdate = birthdate;
     }
 
     public Gender getGender() {
@@ -69,26 +71,35 @@ public class Athlete {
         this.gender = gender;
     }
 
-    public DateTimeFormatter getFormatter() {
-        return this.formatter;
+    public LocalDate getBirth() {
+        return birth;
     }
 
-    public void setFormatter(DateTimeFormatter formatter) {
-        this.formatter = formatter;
+    public void setBirth(LocalDate birth) {
+        this.birth = birth;
     }
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+    // public DateTimeFormatter getFormatter() {
+    //     return this.formatter;
+    // }
+
+    // public void setFormatter(DateTimeFormatter formatter) {
+    //     this.formatter = formatter;
+    // }
+    //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public Athlete(String name,double weight,double height,Gender gender,String nationality,String birthdate){
         this.name = name;
         this.weight = weight;
         this.height = height;
-        this.nationality = nationality;
-        this.birthdate = LocalDate.parse(birthdate, formatter);
+        this.nationality = nationality;     
+        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        this.birthdate = birthdate;
         this.gender = gender;
+ 
     }
     public void compareAge(Athlete athlete){
-        int year = (int) ChronoUnit.YEARS.between(this.getBirthdate(), athlete.getBirthdate());
-
+        int year = (int) ChronoUnit.YEARS.between(this.getBirth(), athlete.getBirth());
         if(year > 0){
             System.out.println(name + " " + year + " older than " + name);
         }else if(year < 0){
@@ -99,6 +110,8 @@ public class Athlete {
     }
     
 public String toString(){
-    return "Athlete " + "[" + name + ", " + weight + "kg" + ", " + height + "m" + ", " + gender + ", " + nationality + ", " + birthdate + "]";
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    birth = LocalDate.parse(birthdate, formatter);
+    return "Athlete " + "[" + name + ", " + weight + "kg" + ", " + height + "m" + ", " + gender + ", " + nationality + ", " + birth + "]";
 }
 }

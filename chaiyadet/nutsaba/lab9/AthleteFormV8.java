@@ -18,7 +18,7 @@ import chaiyadet.nutsaba.lab8.AthleteFormV6;
 
 public class AthleteFormV8 extends AthleteFormV6 implements ActionListener {
     String resultText;
-    String hobbiesText = " ";
+    protected String hobbiesText = " ";
     protected String clickGender;
 
     public AthleteFormV8(String title) {
@@ -65,7 +65,7 @@ public class AthleteFormV8 extends AthleteFormV6 implements ActionListener {
         JCheckBox [] hobbiescheck = {readingCheckBox, gardeningCheckBox, watchingmovivesCheckBox, shoppingCheckBox, othersCheckBox};
         for (int i = 0 ; i < hobbiescheck.length; i++){
             if (hobbiescheck[i].isSelected()){
-                hobbiesText += hobbiescheck[i].getActionCommand() + " ";
+                hobbiesText += hobbiescheck[i].getActionCommand() + ", ";
             } 
         }
         return hobbiesText;
